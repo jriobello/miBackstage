@@ -20,8 +20,8 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
 
 RUN git clone --depth 1 https://github.com/jriobello/backstage.git
 
-RUN cd backstage
+RUN cd backstage && yarn install
 
-RUN yarn install
+#RUN yarn install
 
 CMD ["yarn dev"]
