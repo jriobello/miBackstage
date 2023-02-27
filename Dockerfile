@@ -7,11 +7,8 @@ RUN apt install -y --no-install-recommends ca-certificates git curl;
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 RUN export NVM_DIR="$HOME/.nvm"
-RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-#RUN source ~/.bashrc
+RUN $NVM_DIR/nvm.sh install --lts
 
-
-RUN nvm install --lts
 RUN npm install --global yarn
 
 RUN git clone --depth 1 https://github.com/backstage/bakstage.git
