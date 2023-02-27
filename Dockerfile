@@ -35,5 +35,3 @@ USER bs
 
 
 #CMD ["yarn dev"]
-
-CMD ["yarn"]
