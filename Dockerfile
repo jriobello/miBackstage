@@ -2,9 +2,9 @@
 FROM debian:bullseye-slim
 
 RUN apt update;
-RUN apt install -y --no-install-recommends git curl;
+RUN apt install -y --no-install-recommends ca-certificates git curl;
 	
-RUN curl --insecure https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 #RUN source ~/.profile
   
