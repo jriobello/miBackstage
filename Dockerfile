@@ -10,7 +10,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
     && . $HOME/.nvm/nvm.sh \
     && nvm install --lts
     
-RUN bash npm install --global yarn
+RUN bash . $HOME/.nvm/nvm.sh && npm install --global yarn
     
 #RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
