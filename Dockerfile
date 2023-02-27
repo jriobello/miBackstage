@@ -2,8 +2,7 @@
 FROM debian:bullseye-slim
 
 RUN apt update;
-RUN apt install -y --no-install-recommends git;
-RUN apt install -y --no-install-recommendscurl;
+RUN apt install -y --no-install-recommends git curl;
 	
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
