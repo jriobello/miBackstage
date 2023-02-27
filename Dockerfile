@@ -6,8 +6,11 @@ RUN apt install -y --no-install-recommends ca-certificates git curl;
 	
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
-#RUN source ~/.profile
-  
+RUN export NVM_DIR="$HOME/.nvm"
+RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+#RUN source ~/.bashrc
+
+
 RUN nvm install --lts
 RUN npm install --global yarn
 
