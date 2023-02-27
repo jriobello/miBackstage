@@ -21,10 +21,12 @@ RUN apt install -y yarn
 
 #RUN export NVM_DIR="$HOME/.nvm"
 #RUN . $HOME/.nvm/nvm.sh install --lts
-
 #RUN npm install --global yarn
 
-RUN git clone --depth 1 https://github.com/jriobello/backstage.git
-
+#RUN git clone --depth 1 https://github.com/jriobello/backstage.git
 #RUN cd backstage && yarn install
+
+
 #CMD ["yarn dev"]
+
+CMD ["yarn"]
