@@ -18,7 +18,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
 
 #RUN npm install --global yarn
 
-RUN git clone --depth 1 https://github.com/backstage/bakstage.git
+RUN git clone --depth 1 https://github.com/jriobello/backstage.git
 
 RUN cd backstage
 
