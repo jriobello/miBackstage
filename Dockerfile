@@ -1,25 +1,21 @@
 # explicitly use Debian for maximum cross-architecture compatibility
 FROM debian:bullseye-slim
 
-RUN set -eux; \
-	apt-get install -y \
-		ca-certificates \
-		gnupg dirmngr \
-		wget \
-		curl \
-		git \
-	; \
+RUN apt update;
+RUN apt install git;
+RUN apt install curl;
 	
-  curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-  source ~/.profile
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+RUN source ~/.profile
   
-nvm install --lts
-npm install --global yarn
+RUN nvm install --lts
+RUN npm install --global yarn
 
-git clone --depth 1 https://github.com/backstage/bakstage.git
+RUN git clone --depth 1 https://github.com/backstage/bakstage.git
 
-cd backstage
+RUN cd backstage
 
-yarn install
+RUN yarn install
 
 CMD ["yarn dev"]
