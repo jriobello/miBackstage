@@ -26,7 +26,5 @@ RUN apt install -y yarn
 
 RUN git clone --depth 1 https://github.com/jriobello/backstage.git
 
-CMD ["bash"]
-
 #RUN cd backstage && yarn install
 #CMD ["yarn dev"]
