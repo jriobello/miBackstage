@@ -23,6 +23,13 @@ RUN apt install -y yarn
 #RUN . $HOME/.nvm/nvm.sh install --lts
 #RUN npm install --global yarn
 
+
+RUN useradd -ms /bin/bash bs
+WORKDIR /backstage
+RUN chown -R bs:bs /backstage
+RUN chmod 775 /backstage
+USER bs
+
 #RUN git clone --depth 1 https://github.com/jriobello/backstage.git
 #RUN cd backstage && yarn install
 
