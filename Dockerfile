@@ -30,7 +30,7 @@ RUN chown -R bs:bs /backstage
 RUN chmod 775 /backstage
 USER bs
 
-CMD ["sleep 1d"]
+CMD ["bash"]
 
 #RUN git clone --depth 1 https://github.com/jriobello/backstage.git
 #RUN cd backstage && yarn install
