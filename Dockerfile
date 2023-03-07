@@ -2,13 +2,13 @@
 FROM debian:bullseye-slim
 
 RUN apt update;
-RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreutils python3;
+RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreutils python3 make;
 
 
 # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
     && . $HOME/.nvm/nvm.sh \
-    && nvm install --lts
+    && nvm install 14.15.0
     
 
 #RUN bash . $HOME/.nvm/nvm.sh && npm install --global yarn
@@ -35,7 +35,9 @@ WORKDIR /backstage
 #yarn install necesita crear /.yarn
 RUN mkdir /.yarn && chgrp -R 0 /.yarn && \
     chmod -R g+rwX /.yarn
-
+@cypress necesita /.cache
+RUN mkdir /.cache && chgrp -R 0 /.cache && \
+    chmod -R g+rwX /.cache
 USER bs
   
     
