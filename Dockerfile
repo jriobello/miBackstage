@@ -32,9 +32,9 @@ WORKDIR /backstage
 #RUN chown -R bs:bs /backstage
 #RUN chmod 775 /backstage
 
-#yar install necesita crear /.yarn
-RUN chgrp 0 / && \
-    chmod  g+rwX /
+#yarn install necesita crear /.yarn
+RUN mkdir /.yarn && chgrp -R 0 /.yarn && \
+    chmod -R g+rwX /.yarn
 
 USER bs
   
