@@ -7,21 +7,16 @@ RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreut
 # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
     && . $HOME/.nvm/nvm.sh \
-    && nvm install 14.15.0 \
-    && npm install -g yarn
+    && nvm install 14.15.0
 
 
-RUN mkdir /.nvm && chgrp -R 0 /.nvm && \
-    chmod -R g+rwX /.nvm
-
-RUN cp -R $HOME/.nvm/ /.nvm/ && chgrp -R 0 /.nvm && chmod -R g+rwX /.nvm
 
 #RUN bash . $HOME/.nvm/nvm.sh && npm install --global yarn
 
-#RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-#RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-#RUN apt update
-#RUN apt install -y yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt update
+RUN apt install -y --no-install-recommends yarn
     
 #RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
