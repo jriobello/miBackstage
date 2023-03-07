@@ -48,8 +48,8 @@ USER bs
 CMD ["/usr/bin/tail", "-f", "/dev/null"]
 
 
-
-
+#Instalar
+#RUN export PATH=/bin/versions/node/v14.15.0/bin:$PATH
 #RUN git clone --depth 1 https://github.com/jriobello/backstage.git
 #RUN cd backstage && yarn install
 
