@@ -23,19 +23,21 @@ RUN apt install -y yarn
 #RUN . $HOME/.nvm/nvm.sh install --lts
 #RUN npm install --global yarn
 
-RUN apt-get -y install tzdata
-RUN apt-get -y install apache2
-RUN echo "Dockerfile Test on Apache2" > /var/www/html/index.html
-
-EXPOSE 80
-CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+RUN mkdir /backstage && chgrp -R 0 /backstage && \
+    chmod -R g+rwX /backstage
 
 
-#RUN useradd -ms /bin/bash bs
-#WORKDIR /backstage
-#RUN chown -R bs:bs /backstage
-#RUN chmod 775 /backstage
-#USER bs
+RUN useradd -ms /bin/bash bs
+WORKDIR /backstage
+RUN chown -R bs:bs /backstage
+RUN chmod 775 /backstage
+USER bs
+  
+    
+CMD ["/usr/bin/tail", "-f", "/dev/null"]
+
+
+
 
 #RUN git clone --depth 1 https://github.com/jriobello/backstage.git
 #RUN cd backstage && yarn install
