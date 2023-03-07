@@ -44,7 +44,10 @@ RUN mkdir /.npm && chgrp -R 0 /.npm && \
 
 USER bs
   
-    
+RUN cd / && git clone --depth 1 https://github.com/jriobello/backstage.git
+RUN export PATH=/bin/versions/node/v14.15.0/bin:$PATH
+RUN cd backstage && yarn install
+
 CMD ["/usr/bin/tail", "-f", "/dev/null"]
 
 
