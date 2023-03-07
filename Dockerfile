@@ -2,7 +2,7 @@
 FROM debian:bullseye-slim
 
 RUN apt update;
-RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreutils;
+RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreutils python3;
 
 
 # Install nvm with node and npm
