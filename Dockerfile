@@ -6,6 +6,8 @@ RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreut
 
 
 # Install nvm with node and npm
+RUN mkdir /.nvm && chgrp -R 0 /.nvm && \
+    chmod -R g+rwX /.nvm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
     && . $HOME/.nvm/nvm.sh \
     && nvm install 14.15.0 \
