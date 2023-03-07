@@ -29,8 +29,8 @@ RUN mkdir /backstage && chgrp -R 0 /backstage && \
 
 RUN useradd -ms /bin/bash bs
 WORKDIR /backstage
-RUN chown -R bs:bs /backstage
-RUN chmod 775 /backstage
+#RUN chown -R bs:bs /backstage
+#RUN chmod 775 /backstage
 USER bs
   
     
