@@ -35,7 +35,7 @@ WORKDIR /backstage
 #yarn install necesita crear /.yarn
 RUN mkdir /.yarn && chgrp -R 0 /.yarn && \
     chmod -R g+rwX /.yarn
-@cypress necesita /.cache
+#cypress necesita /.cache
 RUN mkdir /.cache && chgrp -R 0 /.cache && \
     chmod -R g+rwX /.cache
 USER bs
