@@ -2,7 +2,7 @@
 FROM debian:bullseye-slim
 
 RUN apt update;
-RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreutils python3 make;
+RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreutils python3 make sqlite3;
 
 #RUN bash . $HOME/.nvm/nvm.sh && npm install --global yarn
 
