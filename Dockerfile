@@ -16,6 +16,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
     && . $HOME/.nvm/nvm.sh \
     && nvm install 14.15.0
     
+RUN export PATH=/bin/versions/node/v14.15.0/bin:$PATH
 
 #RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
@@ -38,6 +39,9 @@ RUN mkdir /.yarn && chgrp -R 0 /.yarn && \
 #cypress necesita /.cache
 RUN mkdir /.cache && chgrp -R 0 /.cache && \
     chmod -R g+rwX /.cache
+RUN mkdir /.npm && chgrp -R 0 /.npm && \
+    chmod -R g+rwX /.npm
+
 USER bs
   
     
