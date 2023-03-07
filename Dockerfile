@@ -16,7 +16,9 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt update
-RUN apt install -y --no-install-recommends yarn
+RUN apt install -y yarn
+
+RUN nvm alias default 14.15.0
     
 #RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
