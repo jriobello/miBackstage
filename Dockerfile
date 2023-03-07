@@ -31,6 +31,11 @@ RUN useradd -m -p bs -s /bin/bash bs
 WORKDIR /backstage
 #RUN chown -R bs:bs /backstage
 #RUN chmod 775 /backstage
+
+#yar install necesita crear /.yarn
+RUN chgrp 0 / && \
+    chmod  g+rwX /
+
 USER bs
   
     
