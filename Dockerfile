@@ -14,7 +14,7 @@ RUN apt install -y yarn
 # Backstage requiere node 14.15.0, la instalacion de yarn no incluye esa version
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
     && . $HOME/.nvm/nvm.sh \
-    && nvm install 14.15.0
+    && nvm install 18.15.0
     
 RUN export PATH=/bin/versions/node/v14.15.0/bin:$PATH
 
@@ -44,7 +44,7 @@ RUN mkdir /.npm && chgrp -R 0 /.npm && \
   
 USER bs
 #CMD ["/usr/bin/tail", "-f", "/dev/null"]
-CMD ["/bin/bash", "-c", "export PATH=/bin/versions/node/v14.15.0/bin:$PATH;git clone --depth 1 https://github.com/jriobello/backstage.git;tail -f /dev/null"]
+CMD ["/bin/bash", "-c", "export PATH=/bin/versions/node/v18.15.0/bin:$PATH;git clone --depth 1 https://github.com/jriobello/backstage.git;tail -f /dev/null"]
 #CMD ["/bin/bash", "-c", "export PATH=/bin/versions/node/v14.15.0/bin:$PATH;git clone --depth 1 https://github.com/jriobello/backstage.git;cd backstage && yarn install && yarn dev"]
 
 
