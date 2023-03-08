@@ -43,8 +43,7 @@ RUN mkdir /.npm && chgrp -R 0 /.npm && \
     chmod -R g+rwX /.npm
   
 USER bs
-#CMD ["/usr/bin/tail", "-f", "/dev/null"]
-CMD ["cd / && export PATH=/bin/versions/node/v14.15.0/bin:$PATH && git clone --depth 1 https://github.com/jriobello/backstage.git"]
+CMD ["/usr/bin/tail", "-f", "/dev/null"]
 
 
 #Instalar
