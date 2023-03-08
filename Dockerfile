@@ -2,7 +2,7 @@
 FROM debian:bullseye-slim
 
 RUN apt update;
-RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreutils python3 make sqlite3;
+RUN apt install -y --no-install-recommends ca-certificates git curl gnupg coreutils python3 make sqlite3 net-tools;
 
 #RUN bash . $HOME/.nvm/nvm.sh && npm install --global yarn
 
@@ -43,7 +43,8 @@ RUN mkdir /.npm && chgrp -R 0 /.npm && \
     chmod -R g+rwX /.npm
   
 USER bs
-CMD ["/usr/bin/tail", "-f", "/dev/null"]
+#CMD ["/usr/bin/tail", "-f", "/dev/null"]
+CMD ["cd / && export PATH=/bin/versions/node/v14.15.0/bin:$PATH && git clone --depth 1 https://github.com/jriobello/backstage.git"]
 
 
 #Instalar
