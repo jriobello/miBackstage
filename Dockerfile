@@ -44,7 +44,7 @@ RUN mkdir /.npm && chgrp -R 0 /.npm && \
   
 USER bs
 #CMD ["/usr/bin/tail", "-f", "/dev/null"]
-CMD ["/bin/bash", "-c", "export PATH=/bin/versions/node/v14.15.0/bin:$PATH;git clone --depth 1 https://github.com/jriobello/backstage.git"]
+CMD ["/bin/bash", "-c", "export PATH=/bin/versions/node/v14.15.0/bin:$PATH;git clone --depth 1 https://github.com/jriobello/backstage.git;tail -f /dev/null"]
 #CMD ["/bin/bash", "-c", "export PATH=/bin/versions/node/v14.15.0/bin:$PATH;git clone --depth 1 https://github.com/jriobello/backstage.git;cd backstage && yarn install && yarn dev"]
 
 
