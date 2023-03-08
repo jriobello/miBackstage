@@ -29,7 +29,7 @@ RUN mkdir /backstage && chgrp -R 0 /backstage && \
 
 
 RUN useradd -m -p bs -s /bin/bash bs
-WORKDIR /backstage
+WORKDIR /
 #RUN chown -R bs:bs /backstage
 #RUN chmod 775 /backstage
 
@@ -43,7 +43,8 @@ RUN mkdir /.npm && chgrp -R 0 /.npm && \
     chmod -R g+rwX /.npm
   
 USER bs
-CMD ["/usr/bin/tail", "-f", "/dev/null"]
+#CMD ["/usr/bin/tail", "-f", "/dev/null"]
+CMD ["/bin/bash", "-c", "export PATH=/bin/versions/node/v14.15.0/bin:$PATH;git clone --depth 1 https://github.com/jriobello/backstage.git;cd backstage && yarn install && yarn dev"]
 
 
 #Instalar
